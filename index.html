@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Lukas Eifertinger | Software Engineer</title>
+    <meta name="title" content="Lukas Eifertinger | Software Engineer" />
+    <meta name="description" content="Portfolio of Lukas Eifertinger, a 14-year-old software engineer from Germany. Specializing in high-performance web architecture, React, and TypeScript." />
+    <meta name="keywords" content="Lukas Eifertinger, 7ukasx, Software Engineer, Portfolio, 14-year-old developer, Germany, Web Development, Full-stack, React, TypeScript, UI/UX" />
+    <meta name="author" content="Lukas Eifertinger" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://7ukasx.github.io/Portfolio/" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://7ukasx.github.io/Portfolio/le-logo.png" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sora: ['Sora', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+          },
+        },
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      html { scroll-padding-top: 100px; }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: white;
+        color: black;
+        overflow-x: hidden;
+        transition: background-color 0.5s ease, color 0.5s ease;
+      }
+      html.dark body { background-color: black; color: white; }
+      
+      .noise {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%; content: ""; opacity: .04; z-index: 9999; pointer-events: none;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Cfilter id='noiseFilter'%3%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+
+      @keyframes reveal {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .reveal { opacity: 0; }
+      .reveal.active { animation: reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+
+      @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-33.3333%); }
+      }
+      .animate-marquee { display: flex; width: max-content; animation: marquee 60s linear infinite; }
+
+      .text-outline { -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2); color: transparent; }
+      .dark .text-outline { -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2); color: transparent; }
+      
+      #contact-modal, #preview-modal { display: none; }
+      #contact-modal.active, #preview-modal.active { display: flex; }
+
+      @media (max-width: 640px) {
+        .text-outline { -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.2); }
+        .dark .text-outline { -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.2); }
+      }
+    </style>
+</head>
+<body class="selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
+    <div class="noise"></div>
+
+    <!-- Navbar -->
+    <header>
+      <nav class="fixed top-0 left-0 right-0 z-50 py-4 sm:py-8 px-4 sm:px-12 transition-all duration-300" id="main-nav">
+          <div class="max-w-screen-2xl mx-auto flex items-center justify-between">
+              <a href="#home" class="group flex items-center shrink-0">
+                  <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border border-black/10 dark:border-white/10 group-hover:scale-110 transition-all duration-500 bg-white dark:bg-neutral-900 flex items-center justify-center shadow-lg">
+                      <img src="https://7ukasx.github.io/Portfolio/le-logo.png" alt="Logo" class="w-full h-full object-cover">
+                  </div>
+              </a>
+              
+              <div class="relative flex items-center bg-white/80 dark:bg-black/80 backdrop-blur-2xl border border-black/5 dark:border-white/10 p-1 rounded-full mx-1 sm:mx-2 overflow-hidden shadow-lg">
+                  <div id="nav-pill" class="absolute top-1 bottom-1 bg-black dark:bg-white rounded-full transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] opacity-0"></div>
+                  <div class="relative flex items-center gap-0 sm:gap-1">
+                      <a href="#home" data-section="home" class="nav-item px-3 sm:px-5 py-2.5 sm:py-2 rounded-full text-[8px] sm:text-[10px] font-black uppercase tracking-[0.2em] transition-colors duration-500 relative z-10 text-gray-400">Start</a>
+                      <a href="#about" data-section="about" class="nav-item px-3 sm:px-5 py-2.5 sm:py-2 rounded-full text-[8px] sm:text-[10px] font-black uppercase tracking-[0.2em] transition-colors duration-500 relative z-10 text-gray-400">Story</a>
+                      <a href="#skills" data-section="skills" class="nav-item px-3 sm:px-5 py-2.5 sm:py-2 rounded-full text-[8px] sm:text-[10px] font-black uppercase tracking-[0.2em] transition-colors duration-500 relative z-10 text-gray-400">Stack</a>
+                      <a href="#projects" data-section="projects" class="nav-item px-3 sm:px-5 py-2.5 sm:py-2 rounded-full text-[8px] sm:text-[10px] font-black uppercase tracking-[0.2em] transition-colors duration-500 relative z-10 text-gray-400">Work</a>
+                  </div>
+              </div>
+
+              <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                  <button id="theme-toggle" class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-white/70 dark:bg-black/70 backdrop-blur-lg border border-black/10 dark:border-white/10 text-black dark:text-white shadow-sm transition-all hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black">
+                      <svg id="sun-icon" class="w-4 h-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M22 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+                      <svg id="moon-icon" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                  </button>
+              </div>
+          </div>
+      </nav>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section id="home" class="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 overflow-hidden pt-20">
+            <div class="absolute inset-0 z-0 opacity-[0.03]" style="background-image: radial-gradient(#888 1px, transparent 0); background-size: 40px 40px"></div>
+            
+            <div class="max-w-screen-xl w-full mx-auto relative z-10 flex flex-col items-center text-center">
+                <div class="reveal">
+                    <span class="text-[8px] sm:text-[10px] uppercase tracking-[0.4em] sm:tracking-[0.6em] text-gray-500 mb-6 sm:mb-8 font-black block">Software Engineer • Germany</span>
+                </div>
+                <h1 class="text-5xl sm:text-8xl lg:text-[10rem] font-black font-sora leading-[0.9] sm:leading-[0.85] tracking-tighter mb-10 sm:mb-12 reveal delay-100 uppercase">
+                    <span class="block text-black dark:text-white">Lukas</span>
+                    <span class="block text-outline">Eifertinger</span>
+                </h1>
+                <div class="max-w-2xl px-4 text-[9px] sm:text-sm text-gray-500 font-medium tracking-[0.1em] uppercase leading-relaxed mb-12 sm:mb-16 reveal delay-200">
+                    Pioneering digital ecosystems through high-performance engineering. 
+                    Currently 14, crafting the <span class="text-black dark:text-white italic">architecture</span> of tomorrow.
+                </div>
+                <div class="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 reveal delay-300">
+                    <button class="open-contact-btn group relative px-12 sm:px-16 py-5 sm:py-6 bg-black dark:bg-white text-white dark:text-black font-black text-[10px] sm:text-[11px] tracking-[0.3em] uppercase transition-all overflow-hidden shadow-2xl">
+                        <span class="relative z-10">Start Project</span>
+                        <div class="absolute inset-0 bg-gray-800 dark:bg-gray-200 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="py-20 sm:py-40 bg-white dark:bg-black border-y border-black/5 dark:border-white/5">
+            <div class="max-w-screen-xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+                    <div class="lg:col-span-5 reveal">
+                        <h2 class="text-4xl sm:text-7xl font-black font-sora tracking-tighter text-black dark:text-white uppercase leading-none">The<br/>Engineer</h2>
+                    </div>
+                    <div class="lg:col-span-7 space-y-10 sm:space-y-12">
+                        <p class="text-xl sm:text-5xl font-light text-black dark:text-white leading-[1.2] sm:leading-[1.1] tracking-tight italic">Engineering <span class="font-bold not-italic">frictionless</span> interfaces through code.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-16 text-gray-500 text-[10px] sm:text-sm font-medium leading-relaxed uppercase tracking-widest">
+                            <p>Started my engineering journey at 13. My approach is reductionist: eliminating the unnecessary until only essence remains.</p>
+                            <p>Age is a metric; performance is the objective. Developing the digital infrastructure of tomorrow, today.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="py-20 sm:py-40 overflow-hidden">
+            <div class="max-w-screen-2xl mx-auto px-6 mb-16 sm:mb-24 reveal text-center">
+                <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.6em] sm:tracking-[0.8em] text-gray-600 font-black mb-4 sm:mb-6 block">Capabilities</span>
+                <h2 class="text-3xl sm:text-6xl font-black text-black dark:text-white tracking-tighter font-sora uppercase">The Stack</h2>
+            </div>
+            <div class="relative flex whitespace-nowrap py-10 sm:py-14 border-y border-black/5 dark:border-white/5 reveal">
+                <div class="animate-marquee" id="marquee-content"></div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="py-20 sm:py-40 bg-black dark:bg-white relative">
+            <div class="max-w-screen-xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-20 sm:mb-32 reveal">
+                    <div>
+                        <span class="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.4em] sm:tracking-[0.6em] text-white/30 dark:text-black/30 mb-4 sm:mb-6 block">Portfolio Index</span>
+                        <h2 class="text-5xl sm:text-9xl font-black font-sora tracking-tighter text-white dark:text-black uppercase leading-none">WORK</h2>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20 sm:gap-x-16 sm:gap-y-32" id="projects-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="pt-24 sm:pt-40 pb-12 sm:pb-16 bg-white dark:bg-black border-t border-black/5 dark:border-white/5">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="mb-24 sm:mb-40 reveal text-center">
+                <h2 class="text-4xl sm:text-9xl font-black font-sora tracking-tighter text-black dark:text-white uppercase leading-none">
+                    Let's build<br/>
+                    <button class="open-contact-btn text-outline hover:text-black dark:hover:text-white transition-all duration-700">Together</button>
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-16 sm:gap-24 mb-20 sm:mb-32">
+                <div class="lg:col-span-6">
+                    <h2 class="text-3xl sm:text-4xl font-black text-black dark:text-white mb-4 uppercase">Lukas<br/>Eifertinger</h2>
+                    <p class="text-[9px] font-black uppercase tracking-[0.4em] text-gray-400">Software Engineer</p>
+                </div>
+                <div class="lg:col-span-3">
+                    <h4 class="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.4em] text-black/20 dark:text-white/40 mb-6 sm:mb-10">Socials</h4>
+                    <div class="flex flex-wrap gap-4" id="social-links"></div>
+                </div>
+                <div class="lg:col-span-3">
+                    <h4 class="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.4em] text-black/20 dark:text-white/40 mb-6 sm:mb-10">Navigation</h4>
+                    <ul class="space-y-4 sm:space-y-6 text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-gray-500">
+                        <li><a href="#projects" class="hover:text-black dark:hover:text-white transition-all">Work</a></li>
+                        <li><a href="#about" class="hover:text-black dark:hover:text-white transition-all">About</a></li>
+                        <li><a href="#skills" class="hover:text-black dark:hover:text-white transition-all">Stack</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 sm:pt-10 border-t border-black/5 dark:border-white/5 text-center">
+                <p class="text-[8px] sm:text-[9px] font-black uppercase tracking-[0.6em] text-gray-400">© <span id="year"></span> LUKAS EIFERTINGER</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="fixed inset-0 z-[100] items-center justify-center p-4 sm:p-6">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-md modal-overlay"></div>
+        <div class="relative bg-white dark:bg-[#080808] border border-black/10 dark:border-white/10 w-full max-w-2xl overflow-hidden shadow-2xl p-8 sm:p-12">
+            <div id="modal-content">
+                <div class="flex justify-between items-start mb-8 sm:mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-black text-black dark:text-white tracking-tighter uppercase">Message</h2>
+                    <button class="close-modal-btn w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border rounded-full">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+                </div>
+                <form id="contact-form" class="space-y-6 sm:space-y-8">
+                    <input type="text" placeholder="Name" required class="w-full bg-transparent border-b border-black/10 dark:border-white/10 py-3 sm:py-4 text-xs sm:text-sm focus:outline-none focus:border-black dark:focus:border-white uppercase">
+                    <input type="email" placeholder="Email" required class="w-full bg-transparent border-b border-black/10 dark:border-white/10 py-3 sm:py-4 text-xs sm:text-sm focus:outline-none focus:border-black dark:focus:border-white uppercase">
+                    <textarea placeholder="Message" rows="3" class="w-full bg-transparent border-b border-black/10 dark:border-white/10 py-3 sm:py-4 text-xs sm:text-sm focus:outline-none focus:border-black dark:focus:border-white uppercase resize-none"></textarea>
+                    <button type="submit" class="w-full bg-black dark:bg-white text-white dark:text-black py-5 sm:py-6 font-black text-[10px] sm:text-xs uppercase tracking-[0.4em]">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Live Preview Modal -->
+    <div id="preview-modal" class="fixed inset-0 z-[110] items-center justify-center p-2 sm:p-10">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-2xl modal-overlay"></div>
+        <div class="relative w-full h-[95vh] sm:h-full max-w-6xl bg-white dark:bg-neutral-900 rounded-xl sm:rounded-2xl shadow-[0_0_100px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col border border-white/10">
+            <!-- Browser Header -->
+            <div class="h-10 sm:h-12 bg-neutral-100 dark:bg-neutral-800 border-b border-black/5 dark:border-white/10 flex items-center px-4 sm:px-6 justify-between shrink-0">
+                <div class="flex items-center gap-1.5 sm:gap-2">
+                    <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500"></div>
+                    <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500"></div>
+                </div>
+                <div class="bg-black/5 dark:bg-white/5 px-4 sm:px-6 py-1 sm:py-1.5 rounded-full flex items-center gap-2 sm:gap-3 border border-black/5 dark:border-white/5">
+                    <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                    <span id="preview-url-text" class="text-[8px] sm:text-[10px] font-mono tracking-wider opacity-50 truncate max-w-[120px] sm:max-w-md uppercase">loading...</span>
+                </div>
+                <button class="close-modal-btn text-black dark:text-white hover:scale-110 transition-transform">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <!-- Browser Content -->
+            <div class="flex-1 bg-white relative">
+                <div id="preview-loader" class="absolute inset-0 flex flex-col items-center justify-center bg-white dark:bg-neutral-900 z-10 transition-opacity duration-500">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 border-4 border-black/10 dark:border-white/10 border-t-black dark:border-t-white rounded-full animate-spin mb-4 sm:mb-6"></div>
+                    <span class="text-[8px] sm:text-[10px] font-black uppercase tracking-[0.4em] opacity-30 text-black dark:text-white">Initializing Engine</span>
+                </div>
+                <iframe id="preview-iframe" class="w-full h-full border-none bg-white" src=""></iframe>
+                <!-- Fallback Screen -->
+                <div id="preview-fallback" class="hidden absolute inset-0 flex flex-col items-center justify-center bg-white dark:bg-neutral-900 z-20 px-6 sm:px-12 text-center">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 border border-black/10 dark:border-white/10 rounded-full flex items-center justify-center mb-8 sm:mb-10">
+                        <svg class="w-6 h-6 sm:w-8 sm:h-8 opacity-40 text-black dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-black uppercase tracking-tighter mb-4 text-black dark:text-white">Security Restriction</h3>
+                    <p class="text-[9px] sm:text-xs text-gray-500 uppercase tracking-widest max-w-sm mb-10 sm:mb-12">The target server blocks direct embedding. Please view the project in a native browser tab.</p>
+                    <a id="preview-external-link" href="#" target="_blank" class="px-10 sm:px-12 py-4 sm:py-5 bg-black dark:bg-white text-white dark:text-black font-black text-[9px] sm:text-[10px] tracking-[0.4em] uppercase hover:opacity-80 transition-all">Open Native Tab</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="index.js"></script>
+</body>
+</html>
