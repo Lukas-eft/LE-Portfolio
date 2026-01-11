@@ -1,4 +1,3 @@
-
 // Data Definitions
 const stack = [
     { name: "HTML", slug: "html5" },
@@ -115,6 +114,8 @@ function initTheme() {
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
         renderMarquee();
         renderProjects();
+        // WICHTIG: Animationen neu triggern
+        setTimeout(initRevealObserver, 50); 
     });
 
     const savedTheme = localStorage.getItem('theme') || 'dark';
