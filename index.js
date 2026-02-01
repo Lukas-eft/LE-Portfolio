@@ -23,8 +23,8 @@ const projects = [
         title: "LE-Tools", 
         description: "A collection of high-performance utilities and productivity tools for modern developers.", 
         tags: ["React", "TS", "Tailwind"], 
-        link: "https://7ukasx.github.io/LE-Studio/",
-        repo: "https://github.com/7ukasx/LE-Studio",
+        link: "https://Lukas-eft.github.io/LE-Studio/",
+        repo: "https://github.com/Lukas-eft/LE-Studio",
         image: "image.png" 
     },
     { 
@@ -32,8 +32,8 @@ const projects = [
         title: "LE-Tracker", 
         description: "A comprehensive finance tracking tool designed for managing expenses with precision.", 
         tags: ["React", "TS", "Tailwind"], 
-        link: "https://7ukasx.github.io/LE-Tracker/",
-        repo: "https://github.com/7ukasx/LE-Tracker",
+        link: "https://Lukas-eft.github.io/LE-Tracker/",
+        repo: "https://github.com/Lukas-eft/LE-Tracker",
         image: "image2.png" 
     },
     { 
@@ -41,8 +41,8 @@ const projects = [
         title: "Quote Generator", 
         description: "A random quote generator with a clean UI and automated fetching algorithm.", 
         tags: ["Random", "Algorithm", "API"], 
-        link: "https://7ukasx.github.io/Quote-generator/",
-        repo: "https://github.com/7ukasx/Quote-generator",
+        link: "https://Lukas-eft.github.io/Quote-generator/",
+        repo: "https://github.com/Lukas-eft/Quote-generator",
         image: "image3.png" 
     },
     { 
@@ -50,8 +50,8 @@ const projects = [
         title: "Secure Encryption", 
         description: "A lightweight engine for secure data transmission in web applications using AES256.", 
         tags: ["HTML", "AES256", "JS"], 
-        link: "https://7ukasx.github.io/Secure-encryption/",
-        repo: "https://github.com/7ukasx/Secure-encryption",
+        link: "https://Lukas-eft.github.io/Secure-encryption/",
+        repo: "https://github.com/Lukas-eft/Secure-encryption",
         image: "image4.png" 
     },
     { 
@@ -59,8 +59,8 @@ const projects = [
         title: "Coming Soon", 
         description: "Innovative engineering project currently in the rapid development phase.", 
         tags: ["X", "X", "X"], 
-        link: "https://github.com/7ukasx", 
-        repo: "https://github.com/7ukasx",
+        link: "https://github.com/Lukas-eft", 
+        repo: "https://github.com/Lukas-eft",
         image: "image5.png" 
     },
     { 
@@ -68,16 +68,16 @@ const projects = [
         title: "Coming Soon", 
         description: "Stealth mode project focused on high-performance infrastructure.", 
         tags: ["X", "X", "X"], 
-        link: "https://github.com/7ukasx", 
-        repo: "https://github.com/7ukasx",
+        link: "https://github.com/Lukas-eft", 
+        repo: "https://github.com/Lukas-eft",
         image: "image5.png" 
     }
 ];
 
 const socials = [
-    { name: 'GitHub', href: 'https://github.com/7ukasx', icon: `<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>` },
-    { name: 'StackOverflow', href: 'https://stackoverflow.com/users/22421715/7ukasx', icon: `<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.986 21.865v-6.404h2.134V24H1.844v-8.539h2.13v6.404h15.012zM6.111 19.731H16.85v-2.137H6.111v2.137zm.259-4.852l10.48 2.189.451-2.07-10.478-2.187-.453 2.068zm1.359-5.056l9.705 4.53.903-1.95-9.706-4.53-.902 1.95zm2.981-4.801l7.99 7.105 1.439-1.616-7.99-7.103-1.439 1.614zM15.213 0l-1.898 1.05 5.56 10.019 1.898-1.05L15.213 0z"/></svg>` },
-    { name: 'Mail', href: 'mailto:contact@7ukasx.dev', icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v10a2 2 0 002 2z"/></svg>` }
+    { name: 'GitHub', href: 'https://github.com/Lukas-eft', icon: `<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>` },
+    { name: 'StackOverflow', href: 'https://stackoverflow.com/users/27792623/lukas-eft', icon: `<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.986 21.865v-6.404h2.134V24H1.844v-8.539h2.13v6.404h15.012zM6.111 19.731H16.85v-2.137H6.111v2.137zm.259-4.852l10.48 2.189.451-2.07-10.478-2.187-.453 2.068zm1.359-5.056l9.705 4.53.903-1.95-9.706-4.53-.902 1.95zm2.981-4.801l7.99 7.105 1.439-1.616-7.99-7.103-1.439 1.614zM15.213 0l-1.898 1.05 5.56 10.019 1.898-1.05L15.213 0z"/></svg>` },
+    { name: 'Mail', href: 'mailto:contact@test.dev', icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v10a2 2 0 002 2z"/></svg>` }
 ];
 
 // Initialize DOM
@@ -319,3 +319,4 @@ function initRevealObserver() {
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 }
+
